@@ -21,7 +21,7 @@ spring:
       pool-prepared-statements: true
   jpa:
 #    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: ${db_dialect}
     show-sql: true
     properties:
       hibernate:
