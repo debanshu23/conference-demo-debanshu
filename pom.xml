@@ -59,9 +59,9 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <!--Below only works with linux/unix system it will not work with Windows.-->
-                <configuration>
-                    <executable>true</executable>
-                </configuration>
+<!--                <configuration>-->
+<!--                    <executable>true</executable>-->
+<!--                </configuration>-->
             </plugin>
         </plugins>
     </build>
