@@ -11,13 +11,14 @@ spring:
     url: ${DB_URL}
     username: jqgorenofqvdhi
     password: 463af22b05fbed1373aa1d1e5ecd7809d070bff35e047fc0cba8356f898db32f
-    driver-class-name: com.mysql.cj.jdbc.Driver
+#    driver-class-name: com.mysql.cj.jdbc.Driver
     dbcp2:
       initial-size: 8
       max-total: 20
       pool-prepared-statements: true
   jpa:
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+#    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     properties:
       hibernate:
@@ -25,7 +26,7 @@ spring:
       jdbc:
         lob:
           non_contextual_creation: true
-    generate-ddl: true
+    generate-ddl: false
 
 logging:
   level:
