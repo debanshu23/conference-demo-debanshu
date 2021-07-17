@@ -7,8 +7,8 @@ server:
 #Below are needed property for Spring appliction talking with MySQL DB.
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/conference_demo
-#    url: ${MySQLURL}
+#    url: jdbc:mysql://localhost:3306/conference_demo
+    url: ${DB_URL}
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -25,6 +25,7 @@ spring:
       jdbc:
         lob:
           non_contextual_creation: true
+    generate-ddl: true
 
 logging:
   level:

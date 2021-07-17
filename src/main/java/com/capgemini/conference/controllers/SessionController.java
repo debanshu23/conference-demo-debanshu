@@ -1,6 +1,7 @@
 package com.capgemini.conference.controllers;
 
 import com.capgemini.conference.models.Session;
+import com.capgemini.conference.models.Speaker;
 import com.capgemini.conference.repositories.SessionRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 @RestController
@@ -26,7 +29,20 @@ public class SessionController {
 
     @GetMapping
     public List<Session> list(){
-        return sessionRepository.findAll();
+        final List<Session> sessions = sessionRepository.findAll();
+        if(!sessions.isEmpty()){
+            return sessions;
+        }
+
+        Session session = new Session();
+        session.setSession_id(0L);
+        session.setSession_name("Not found");
+        session.setSession_length(120);
+        session.setSpeakers(new ArrayList<Speaker>());
+
+        List<Session> emptySession = new ArrayList<>();
+        emptySession.add(session);
+        return emptySession;
     }
 
     @GetMapping
