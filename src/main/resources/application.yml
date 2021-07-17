@@ -9,8 +9,11 @@ spring:
   datasource:
 #    url: jdbc:mysql://localhost:3306/conference_demo
     url: ${DB_URL}
-    username: jqgorenofqvdhi
-    password: 463af22b05fbed1373aa1d1e5ecd7809d070bff35e047fc0cba8356f898db32f
+    username: ${db_username}
+    password: ${db_password}
+#   Below username and password is for heroku
+#   username: jqgorenofqvdhi
+#   password: 463af22b05fbed1373aa1d1e5ecd7809d070bff35e047fc0cba8356f898db32f
 #    driver-class-name: com.mysql.cj.jdbc.Driver
     dbcp2:
       initial-size: 8
